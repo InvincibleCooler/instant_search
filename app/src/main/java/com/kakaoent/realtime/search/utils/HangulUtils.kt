@@ -12,13 +12,9 @@ class HangulUtils {
         private const val HANGUL_END_UNICODE = 55203
         private const val HANGUL_BASE_UNIT = 588
 
-        private var choSung = 0
-        private var jungSung = 0
-        private var jongSung = 0
-
-        const val TYPE_CHOSUNG = 0
-        const val TYPE_JUNGSUNG = 1
-        const val TYPE_JONGSUNG = 2
+        private const val TYPE_CHOSUNG = 0
+        private const val TYPE_JUNGSUNG = 1
+        private const val TYPE_JONGSUNG = 2
 
         private val INITIAL = charArrayOf(
             'ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ',
@@ -53,6 +49,9 @@ class HangulUtils {
 
         private fun divideKorean(type: Int, value: String): String {
             var hangul = ""
+            var choSung: Int
+            var jungSung: Int
+            var jongSung: Int
             for (element in value) {
                 if (element.code in 0xAC00..0xD7A3) { // "AC00:가" ~ "D7A3:힣" 에 속한 글자면
                     // 분해
