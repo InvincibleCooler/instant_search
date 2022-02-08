@@ -2,7 +2,7 @@ package com.kakaoent.realtime.search.utils
 
 
 /**
- * 한글 형태소 분석을 위한 Util
+ * 한글 분석을 위한 Util
  */
 class HangulUtils {
     companion object {
